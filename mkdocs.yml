@@ -1,0 +1,58 @@
+site_name: Culture Amp Athena Connector
+repo_name: 'documentation-experiment'
+repo_url: 'https://github.com/isakiko/documenation-experiment'
+
+theme:
+    name: material
+    palette:
+    - media: "(prefers-color-scheme: dark)"
+      primary: deep-purple
+      accent: orange
+      scheme: slate
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      primary: purple
+      accent: deep-orange
+      scheme: default
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    language: 'en'
+
+
+plugins:
+    - mkdocstrings:
+        handlers:
+            python:
+                selection:
+                    docstring_style: restructured-text
+                    filters:
+                        - "!^_"
+                rendering:
+                    separate_signature: true
+                    show_signature_annotations: true
+                    show_if_no_docstring: true
+                    show_root_heading: true
+                    show_bases: true
+                    members_order: source
+        watch:
+            - documentation_experiment
+    - search
+    - minify:
+        minify_html: true
+    - git-revision-date-localized:
+        type: timeago
+    - git-authors:
+        show_contribution: true
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
+extra_css:
+  - extra.css
