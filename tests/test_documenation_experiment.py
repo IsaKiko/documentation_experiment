@@ -1,5 +1,4 @@
-from documenation_experiment import __version__
-
+from documentation_experiment.greetings import Greeting
 
 def test_version():
-    assert __version__ == '0.1.0'
+    assert 1 == 1

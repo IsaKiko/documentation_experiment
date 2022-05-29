@@ -27,17 +27,17 @@ plugins:
         handlers:
             python:
                 selection:
-                    docstring_style: restructured-text
-                    filters:
-                        - "!^_"
+                    docstring_style: sphinx
                 rendering:
                     separate_signature: true
                     show_signature_annotations: true
                     show_if_no_docstring: true
                     show_root_heading: true
+                    show_submodules: true
                     show_bases: true
                     members_order: source
         watch:
+
             - documentation_experiment
     - search
     - minify:
